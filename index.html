@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Control</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"><!-- Barra de navegacion-->
+        <div class="container-fluid">
+            <h1 class="navbar-brand" href="#">Cine Control</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Peliculas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Series
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Login
+                    </button>
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title fs-5" id="loginModalLabel">Inicio de Sesion</h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Prueba de inicio de sesion <!--Aqui va comentarios de inicio-->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Iniciar</button>
+                                    <button type="button" class="btn btn-primary">No eres tu</button>
+                                </div>
+                                <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar película o serie"
+                        aria-label="Search" id="busqueda">
+                    <input type="hidden" id="tipo-letra" name="tipo-letra" value="">
+                    <button class="btn btn-outline-success" type="text">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header><!--este es el encabezado con comentarios sobre el sitio web-->
+        <h3>Peliculas y Series: Cine Control es el sitio que te permite tener el control de lo que quieres ver.</h3>
+        Puedes usar el buscador en la parte superior para ver una pelicula o serie, tambien puedes ir directamente
+        seleccionando la imagen de portada, <br>
+        esto abrira el reproductor y solo debes dar click en el boton "play" del reproductor. <br>
+        Comparte y disfruta este sitio web.
+    </header>
+    <div class="letras-busqueda"><!-- Agrega los botones de las letras desde la A hasta la Z -->
+        <button class="letra-busqueda">A</button>
+        <button class="letra-busqueda">B</button>
+        <button class="letra-busqueda">C</button>
+        <button class="letra-busqueda">D</button>
+        <button class="letra-busqueda">E</button>
+        <button class="letra-busqueda">F</button>
+        <button class="letra-busqueda">G</button>
+        <button class="letra-busqueda">H</button>
+        <button class="letra-busqueda">I</button>
+        <button class="letra-busqueda">J</button>
+        <button class="letra-busqueda">K</button>
+        <button class="letra-busqueda">L</button>
+        <button class="letra-busqueda">M</button>
+        <button class="letra-busqueda">N</button>
+        <button class="letra-busqueda">O</button>
+        <button class="letra-busqueda">P</button>
+        <button class="letra-busqueda">Q</button>
+        <button class="letra-busqueda">R</button>
+        <button class="letra-busqueda">S</button>
+        <button class="letra-busqueda">T</button>
+        <button class="letra-busqueda">U</button>
+        <button class="letra-busqueda">V</button>
+        <button class="letra-busqueda">W</button>
+        <button class="letra-busqueda">X</button>
+        <button class="letra-busqueda">Y</button>
+        <button class="letra-busqueda">Z</button>
+    </div>
+    <main>
+        <section id="peliculas">
+            <div class="pelicula">
+                <h2>Mario Bros</h2>
+                <img src="img/mario bros.jpg" alt="caratula" onclick="mostrarInformacion('mario_bros')">
+            </div>
+            <div class="pelicula">
+                <h2>Avatar</h2>
+                <img src="img/avatar dos.jpg" alt="caratula" onclick="mostrarInformacion('avatar_dos')">
+            </div>
+            <div class="pelicula">
+                <h2>Jhon Wick 4</h2>
+                <img src="img/jhon wick  4 (2).jpg" alt="caratula" onclick="mostrarInformacion('jhon_wick_4')">
+            </div>
+            <div class="pelicula">
+                <h2>Shazam! La furia de los dioses</h2>
+                <img src="img/shazam.jpg" alt="caratula" onclick="mostrarInformacion('shazam_furia')">
+            </div>
+            <div class="pelicula">
+                <h2>Creed III</h2>
+                <img src="img/creed.jpg"caratula" onclick="mostrarInformacion('creed_3')">
+            </div>
+            <div class="pelicula">
+                <h2>Gato con botas el ultimo deseo</h2>
+                <img src="img/gato dos.jpg" alt="caratula" onclick="mostrarInformacion('gato')">
+            </div>
+            <div class="pelicula">
+                <h2>BLACK ADAM</h2>
+                <img src="img/adam.jpeg"caratula" onclick="mostrarInformacion('adam')">
+            </div>
+            <div class="pelicula">
+                <h2>BLACK PHONE</h2>
+                <img src="img/phone.jpeg" alt="caratula" onclick="mostrarInformacion('phone')">
+            </div>            
+
+            <!--el siguiente div estructura la informacion de la pelicula para luego mostrar en la funcion mostrar informacion-->
+            <div id="informacion-pelicula" style="display: none;">  
+                <h2 id="titulo-pelicula"></h2>
+                <img id="imagen-pelicula" alt="imagen-pelicula">
+                <p id="descripcion-pelicula"></p>
+                <a id="enlace-pelicula" href="#" target="_blank"><button>Reproducir enlace externo</button></a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 tatan Sanmiguel</p>
+    </footer>
+
+    <script>
+        // Obtener la información de la película según el nombre
+        // se obtienen los datos de la película desde el servidor a una URL
+
+        function mostrarInformacion(pelicula) {
+            let titulo, imagen, descripcion, enlace;
+
+            //se debe color else if por cada seccion de peliculas a agregar
+            if (pelicula === "mario_bros") { //el nombre de la pelicula debe ser exacto de la clase pelicula
+                titulo = "MARIO BROS"; //el nombre que se mostrara en el enlace
+                imagen = "img/mario dos.jpeg";//ruta de la imagen que se mostrara
+                descripcion = "Un fontanero llamado Mario viaja por un laberinto subterráneo con su hermano, Luigi, intentando salvar a una princesa capturada.";
+                enlace = "https://www.pelisplushd.ph/pelicula/super-mario-bros-la-pelicula/";//enlace externo para ver la pelicula
+            } else if (pelicula === "avatar_dos") {
+                titulo = "AVATAR";
+                imagen = "img/avatar.jpg";
+                descripcion = "En un exuberante planeta llamado Pandora viven los Na'vi, seres que aparentan ser primitivos pero que en realidad son muy evolucionados. Debido a que el ambiente de Pandora es venenoso, los híbridos humanos/Na'vi, llamados Avatares, están relacionados con las mentes humanas, lo que les permite moverse libremente por Pandora. Jake Sully, un exinfante de marina paralítico se transforma a través de un Avatar, y se enamora de una mujer Na'vi.";
+                enlace = "https://www.pelisplushd.ph/pelicula/avatar-el-sentido-del-agua/";
+            } else if (pelicula === "jhon_wick_4") {
+                titulo = "JHON WICK 4";
+                imagen = "img/jhon dos.jpg";
+                descripcion = "El marqués Vincent de Gramont pretende matar a John Wick para afianzar su poder en la Orden Suprema. Sin embargo, John tratará de adelantarse a cada uno de sus movimientos hasta lograr enfrentarse cara a cara con su peor enemigo.";
+                enlace = "https://www.pelisplushd.ph/pelicula/john-wick-chapter-4/";
+            } else if (pelicula === "shazam_furia") {
+                titulo = "SHAZAM! LA FURIA DE LOS DIOSES";
+                imagen = "img/shazam dos.jpg";
+                descripcion = "Billy Batson y sus hermanos adoptivos Freddy, Mary, Pedro, Eugene y Darla, también dotados de superpoderes, tienen que enfrentarse a las tres hijas de Atlas: Hespera, Calipso y Anthea.";
+                enlace = "https://www.pelisplushd.ph/pelicula/shazam-fury-of-the-gods//";
+            } else if (pelicula === "creed_3") {
+                titulo = "CREED III";
+                imagen = "img/creed dos.jpeg";
+                descripcion = "Adonis Creed, aún dominando el mundo del boxeo, prospera en su carrera y en su vida familiar, pero un amigo de la infancia y antiguo prodigio del boxeo reaparece tras salir de la cárcel y está ansioso por demostrar que merece otra oportunidad.";
+                enlace = "https://www.pelisplushd.ph/pelicula/creed-iii/";
+            } else if (pelicula === "gato") {
+                titulo = "GATO CON BOTAS EL ULTIMO DESEO";
+                imagen = "img/gato con botas.jpg";
+                descripcion = "El Gato con Botas descubre que su pasión por la aventura le ha pasado factura: ha consumido ocho de sus nueve vidas, por ello emprende un viaje épico para encontrar el mítico Último Deseo y restaurar sus nueve vidas.";
+                enlace = "https://www.pelisplushd.ph/pelicula/puss-in-boots-the-last-wish/";
+            } else if (pelicula === "adam") {
+                titulo = "BLACK ADAM";
+                imagen = "img/adam dos.jpg";
+                descripcion = "Unos arqueólogos liberan de su tumba a Black Adam, quien llevaba 5000 años preso tras haber recibido los poderes de los dioses. De nuevo entre los humanos, Black Adam se dispone a imponer su justicia, muy diferente a la del mundo en el que despertó.";
+                enlace = "https://www.pelisplushd.ph/pelicula/black-adam/";
+            } else if (pelicula === "phone") {
+                titulo = "BLACK PHONE";
+                imagen = "img/phone dos.jpg";
+                descripcion = "Un homicida sádico y enmascarado mantiene a Finney, un niño de 13 años, secuestrado en un sótano incomunicado. A través de un teléfono averiado que hay en la pared, Finney se comunica con otras víctimas del criminal, quienes quieren ayudarlo.";
+                enlace = "https://www.pelisplushd.ph/pelicula/black-phone/";
+            } 
+
+            // Mostrar la información de la película en la página
+            document.getElementById("titulo-pelicula").innerText = titulo;
+            document.getElementById("imagen-pelicula").src = imagen;
+            document.getElementById("descripcion-pelicula").innerText = descripcion;
+            document.getElementById("enlace-pelicula").href = enlace;
+
+            // Mostrar el contenedor de la información de la película
+            document.getElementById("informacion-pelicula").style.display = "block";
+        }
+    </script>
+    <script>
+        // Obtener el campo de búsqueda
+        const campoBusqueda = document.getElementById('busqueda');
+
+        // Obtener todos los botones de las letras de búsqueda
+        const botonesLetras = document.querySelectorAll('.letra-busqueda');
+
+        // Obtener todas las películas
+        const peliculas = document.querySelectorAll('.pelicula');
+
+        // Función para filtrar las películas según el criterio de búsqueda
+        const filtrarPeliculas = () => {
+            const filtro = campoBusqueda.value.toLowerCase();
+
+            // Iterar sobre cada película y ocultar o mostrar según el filtro de búsqueda
+            peliculas.forEach((pelicula) => {
+                const titulo = pelicula.querySelector('h2').innerText.toLowerCase();
+                const sinopsis = pelicula.querySelector('p').innerText.toLowerCase();
+
+                if (titulo.includes(filtro) || sinopsis.includes(filtro)) {
+                    pelicula.style.display = 'block';  // Mostrar la película
+                } else {
+                    pelicula.style.display = 'none';  // Ocultar la película
+                }
+            });
+        };
+
+        // Agregar un evento de entrada (input) al campo de búsqueda
+        campoBusqueda.addEventListener('input', filtrarPeliculas);
+
+        // Agregar un evento de clic a cada botón de letra
+        botonesLetras.forEach((botonLetra) => {
+            botonLetra.addEventListener('click', () => {
+                // Obtener la letra seleccionada
+                const letra = botonLetra.innerText.toLowerCase();
+
+                // Iterar sobre cada película y ocultar o mostrar según la letra de búsqueda
+                peliculas.forEach((pelicula) => {
+                    const titulo = pelicula.querySelector('h2').innerText.toLowerCase();
+
+                    if (titulo.startsWith(letra)) {
+                        pelicula.style.display = 'block';  // Mostrar la película si coincide con la letra
+                    } else {
+                        pelicula.style.display = 'none';  // Ocultar la película si no coincide con la letra
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
