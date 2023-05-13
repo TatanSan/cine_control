@@ -1,0 +1,89 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+$color-primario: #ffc107; // anidacion de variables
+$color-hover: #ff9800;
+$padding-botones: 10px 20px;
+$border-radius-botones: 5px;
+$transicion-botones: 0.3s ease;
+
+#informacion-pelicula a { //anidacion de selectores
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: $color-primario;
+  padding: $padding-botones;
+  border-radius: $border-radius-botones;
+  font-weight: bold;
+  transition: background-color $transicion-botones;
+}
+
+#informacion-pelicula a:hover {
+  background-color: $color-hover;
+}
+
+#peliculas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    grid-auto-rows: minmax(200px, auto);
+  
+    .pelicula {
+      text-align: center;
+      transition: transform 0.3s ease;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  
+  #informacion-pelicula {
+    display: none;
+    text-align: center;
+    margin-bottom: 15px;
+  
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    img {
+      width: 200px;
+      margin-top: 10px;
+    }
+  
+    p {
+      margin-top: 10px;
+    }
+  
+    a {
+      margin-top: 10px;
+      display: inline-block;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #ffc107;
+      padding: $padding-botones;
+      border-radius: $border-radius-botones;
+      font-weight: bold;
+      transition: background-color $transicion-botones;
+  
+      &:hover {
+        background-color: $color-hover;
+      }
+    }
+  }
+
+
+  $imagen-nombre: "mario"; // interpolacion
+  $imagen-extension: "jpg";
+  $imagen-ruta: "img/#{$imagen-nombre}.#{$imagen-extension}";
+  
+  #informacion-pelicula img {
+    content: url("#{$imagen-ruta}");
+  }
